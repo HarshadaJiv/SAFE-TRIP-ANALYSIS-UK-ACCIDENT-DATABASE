@@ -1,0 +1,31 @@
+ 0   Accident_Index                      484748 non-null  object
+ 1   Vehicle_Reference                   484748 non-null  int64 
+ 2   Casualty_Reference                  484748 non-null  int64 
+ 
+
+ 3   Casualty_Class                      484748 non-null  int64 
+ 4   Sex_of_Casualty                     484748 non-null  int64 
+ 5   Age_of_Casualty                     484748 non-null  int64 
+ 6   Age_Band_of_Casualty                484748 non-null  int64 
+ 7   Casualty_Severity                   484748 non-null  int64 
+ 8   Pedestrian_Location                 484748 non-null  int64 
+ 9   Pedestrian_Movement                 484748 non-null  int64 
+ 10  Car_Passenger                       484748 non-null  int64 
+ 11  Bus_or_Coach_Passenger              484748 non-null  int64 
+ 12  Pedestrian_Road_Maintenance_Worker  484748 non-null  int64 
+ 13  Casualty_Type                       484748 non-null  int64 
+ 14  Casualty_Home_Area_Type             484748 non-null  int64 
+ 15  Casualty_IMD_Decile                 484748 non-null  int64 
+
+
+ df['Casualty_IMD_Decile'].unique() 
+
+
+ df[df['Casualty_IMD_Decile']<0] #dirty data - 
+
+ df.drop(df[df['Casualty_IMD_Decile'] < 0].index, inplace=True)
+
+ Valid range of Casualty_IMD_Decile is [1-10]. -1 is bad data. Bad data is 86593/484748 = 0.17863508462
+
+
+ 484748
